@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_195616) do
+ActiveRecord::Schema.define(version: 2021_12_15_203833) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -50,8 +50,10 @@ ActiveRecord::Schema.define(version: 2021_12_15_195616) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "user_id"
+    t.string "name"
+    t.text "address"
+    t.string "email"
+    t.integer "pay_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
