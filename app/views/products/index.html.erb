@@ -2,8 +2,9 @@
 
 <h1>Products</h1>
 
-<div id="products">
-  <%= render @products %>
-</div>
+  <%= turbo_stream_from :products %>
+  <%= turbo_frame_tag :products do %>
+    <%= render @products %>
+  <% end %>
 
 <%= link_to "New product", new_product_path %>
