@@ -11,6 +11,7 @@ import "trix"
 import "@rails/actiontext"
 import "../controllers"
 import "@hotwired/turbo-rails"
+import "../application.css";
 
 Rails.start()
 Turbolinks.start()
