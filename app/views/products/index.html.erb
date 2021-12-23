@@ -1,10 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
+<div class="max-w-lg mx-auto mt-16 text-center max-w-sm rounded overflow-hidden shadow-lg p-10">
+  <h1 class="mb-4 text-3xl font-black">Products</h1>
+  <p class="text-lg leading-snug">Shop to your &#10084;'s content</p>
+</div>
 
-  <%= turbo_stream_from :products %>
-  <%= turbo_frame_tag :products do %>
-    <%= render @products %>
-  <% end %>
+<%= turbo_stream_from :products %>
+<%= turbo_frame_tag :products do %>
+  <%= render @products %>
+<% end %>
 
 <%= link_to "New product", new_product_path %>
