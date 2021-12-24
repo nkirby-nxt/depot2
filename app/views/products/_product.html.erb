@@ -22,8 +22,8 @@
           <%= product.image_url %>
         </p>
 
-        <p>
-          <%= link_to "Show this product", product %>
+        <p data-turbo="false">
+          <%= link_to "Edit this product", edit_product_path(product), remote: false %> 
         </p>
       </div>
       <div class="px-6 pt-4 pb-2">
