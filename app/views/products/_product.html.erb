@@ -22,6 +22,9 @@
           <p data-turbo="false" class="mt-7">
             <%= link_to "Edit this product", edit_product_path(product), remote: false %> 
           </p>
+          <p>
+            <%= link_to "Delete this product", product, method: :delete %>
+          </p>
         </div>
       </div>
       <div class="px-6 pt-4 pb-2">
