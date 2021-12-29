@@ -9,18 +9,18 @@
 <%= turbo_stream_from :orders%>
 
 <table class="min-w-full table-auto">
-	  <thead class="bg-gray-800 text-gray-300">
+	  <thead class="bg-gray-800 text-white">
 	    <tr>
 	      <th>Order ID</th>
 	      <th>Customer</th>
 	      <th>Products</th>
-	      <th colspan="3"></th>
+	      <th colspan="5"></th>
 	    </tr>
 	  </thead>
 
 	  <tbody>
 	    <% @orders.each do |order| %>
-	      <tr class="border-4 border-gray-200">
+	      <tr class="border-8 border-gray-400">
 	        <td><%= order.id %></td>
 	        <td><%= order.customer.name %></td>
 	        <td><%= order.products.name %></td>
