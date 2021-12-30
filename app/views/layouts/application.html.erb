@@ -14,15 +14,20 @@
       </a>
           
       <div class="text-lg text-gray-600 hidden lg:flex">
-        <%= link_to "Products", products_path, class: "block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10"%>
-        <%= link_to "Orders", orders_path, class: "block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10"%>
+        <% if user_signed_in? %>
+          <%= link_to "Products", products_path, class: "block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10"%>
+          <%= link_to "Orders", orders_path, class: "block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10"%>
+        <% end %>
       </div>
 
           
       <div class="flex items-center">
         <div class="mr-5 lg:mr-0">
-          <button class="py-2 px-6 rounded-md text-gray-600 hover:text-gray-700 text-lg">Sign in</button>
-          <button class="py-2 px-6 bg-teal-500 hover:bg-teal-600 rounded-md text-white text-lg">Sign up</button>
+          <% if user_signed_in? %>
+            <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "py-2 px-6 rounded-md text-gray-600 hover:text-gray-700 text-lg"  %>
+         <% else %>
+            <%= button_to "Sign In", new_user_session_path, method: :get, class: "py-2 px-6 rounded-md text-gray-600 hover:text-gray-700 text-lg"  %>
+        <% end %>
         </div>
         <div class="block lg:hidden">
           <button class="flex items-center px-4 py-3 border rounded text-teal-500 border-teal-500 focus:outline-none">
