@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-    resources :customers
-    resources :orders
-    resources :products
+  namespace :admin do 
+    resources :customers, :orders, :products
+  end
   get 'store/index'
   root to: 'store#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

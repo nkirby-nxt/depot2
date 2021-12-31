@@ -15,17 +15,16 @@
           
       <div class="text-lg text-gray-600 hidden lg:flex">
         <% if user_signed_in? %>
-          <%= link_to "Products", products_path, class: "block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10"%>
-          <%= link_to "Orders", orders_path, class: "block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10"%>
+          <%= link_to "Products", admin_products_path, class: "block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10"%>
+          <%= link_to "Orders", admin_orders_path, class: "block mt-4 lg:inline-block text-teal-600 lg:mt-0 mr-10"%>
         <% end %>
       </div>
-
           
       <div class="flex items-center">
         <div class="mr-5 lg:mr-0">
-          <% if user_signed_in? %>
+        <% if user_signed_in? %>
             <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "py-2 px-6 rounded-md text-gray-600 hover:text-gray-700 text-lg"  %>
-         <% else %>
+        <% else %>
             <%= button_to "Sign In", new_user_session_path, method: :get, class: "py-2 px-6 rounded-md text-gray-600 hover:text-gray-700 text-lg"  %>
         <% end %>
         </div>
