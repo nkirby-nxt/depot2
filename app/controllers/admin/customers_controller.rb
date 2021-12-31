@@ -1,5 +1,4 @@
 class Admin::CustomersController < Admin::AdminController
-  before_action :authenticate_user!
   before_action :set_customer, only: %i[ show edit update destroy ]
 
   # GET /customers or /customers.json
