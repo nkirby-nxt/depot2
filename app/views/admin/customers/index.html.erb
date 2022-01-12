@@ -1,14 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Customers</h1>
-
-<div id="customers">
-  <% @customers.each do |customer| %>
-    <%= render customer %>
-    <p>
-      <%= link_to "Show this customer", customer %>
-    </p>
-  <% end %>
+<div class="max-w-lg mx-auto mt-16 text-center max-w-xl rounded overflow-hidden shadow-lg p-5">
+  <h1 class="mb-4 text-5xl font-black">Orders</h1>
+  <p class="text-lg leading-snug">Customers</p>
 </div>
+<br>
+
+<%= turbo_stream_from :customers %>
+
+<table class="min-w-full table-auto">
+	  <thead class="bg-gray-800 text-white">
+	    <tr>
+	      <th>Customer ID</th>
+	      <th>Customer Name</th>
+          <th>Customer Email</th>
+	      <th>Customer Orders</th>
+	      <th colspan="5"></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	    <% @customers.each do |customer| %>
+	      <tr class="border-8 border-gray-400">
+	        <td><%= customer.id %></td>
+	        <td><%= customer.name %></td>
+            <td><%= customer.email %></td>
+            <td>
+              <% customer.orders.each do |order|%>
+                <p><%= order.id %></p>
+              <% end %>
+            </td>
+	        
+	        <td><%= link_to 'Show', admin_customer_path(customer), class: "text-blue-500" if user_signed_in? %></td>
+	        <td><%= link_to 'Edit', edit_admin_customer_path(customer) if user_signed_in? %></td>
+	        <td><%= link_to 'Destroy', admin_customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' }  if user_signed_in? %></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+    <br>
 
 <%= link_to "New customer", new_admin_customer_path %>
