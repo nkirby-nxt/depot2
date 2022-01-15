@@ -1,10 +1,10 @@
 <p class="text-2xl">Editing product</p>
 
-<%= render "form", product: @product %>
+<%= render "edit_form", product: @product %>
 
 <br>
 
 <div>
-  <%= link_to "Show this product", @product %> |
-  <%= link_to "Back to products", products_path %>
+  <%= link_to "Show this product", admin_products_path(@product) %> |
+  <%= link_to "Back to products", admin_products_path %>
 </div>

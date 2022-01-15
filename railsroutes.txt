@@ -14,30 +14,30 @@
                                          PUT    /users(.:format)                                                                                  devise/registrations#update
                                          DELETE /users(.:format)                                                                                  devise/registrations#destroy
                                          POST   /users(.:format)                                                                                  devise/registrations#create
-                               customers GET    /customers(.:format)                                                                              customers#index
-                                         POST   /customers(.:format)                                                                              customers#create
-                            new_customer GET    /customers/new(.:format)                                                                          customers#new
-                           edit_customer GET    /customers/:id/edit(.:format)                                                                     customers#edit
-                                customer GET    /customers/:id(.:format)                                                                          customers#show
-                                         PATCH  /customers/:id(.:format)                                                                          customers#update
-                                         PUT    /customers/:id(.:format)                                                                          customers#update
-                                         DELETE /customers/:id(.:format)                                                                          customers#destroy
-                                  orders GET    /orders(.:format)                                                                                 orders#index
-                                         POST   /orders(.:format)                                                                                 orders#create
-                               new_order GET    /orders/new(.:format)                                                                             orders#new
-                              edit_order GET    /orders/:id/edit(.:format)                                                                        orders#edit
-                                   order GET    /orders/:id(.:format)                                                                             orders#show
-                                         PATCH  /orders/:id(.:format)                                                                             orders#update
-                                         PUT    /orders/:id(.:format)                                                                             orders#update
-                                         DELETE /orders/:id(.:format)                                                                             orders#destroy
-                                products GET    /products(.:format)                                                                               products#index
-                                         POST   /products(.:format)                                                                               products#create
-                             new_product GET    /products/new(.:format)                                                                           products#new
-                            edit_product GET    /products/:id/edit(.:format)                                                                      products#edit
-                                 product GET    /products/:id(.:format)                                                                           products#show
-                                         PATCH  /products/:id(.:format)                                                                           products#update
-                                         PUT    /products/:id(.:format)                                                                           products#update
-                                         DELETE /products/:id(.:format)                                                                           products#destroy
+                         admin_customers GET    /admin/customers(.:format)                                                                        admin/customers#index
+                                         POST   /admin/customers(.:format)                                                                        admin/customers#create
+                      new_admin_customer GET    /admin/customers/new(.:format)                                                                    admin/customers#new
+                     edit_admin_customer GET    /admin/customers/:id/edit(.:format)                                                               admin/customers#edit
+                          admin_customer GET    /admin/customers/:id(.:format)                                                                    admin/customers#show
+                                         PATCH  /admin/customers/:id(.:format)                                                                    admin/customers#update
+                                         PUT    /admin/customers/:id(.:format)                                                                    admin/customers#update
+                                         DELETE /admin/customers/:id(.:format)                                                                    admin/customers#destroy
+                            admin_orders GET    /admin/orders(.:format)                                                                           admin/orders#index
+                                         POST   /admin/orders(.:format)                                                                           admin/orders#create
+                         new_admin_order GET    /admin/orders/new(.:format)                                                                       admin/orders#new
+                        edit_admin_order GET    /admin/orders/:id/edit(.:format)                                                                  admin/orders#edit
+                             admin_order GET    /admin/orders/:id(.:format)                                                                       admin/orders#show
+                                         PATCH  /admin/orders/:id(.:format)                                                                       admin/orders#update
+                                         PUT    /admin/orders/:id(.:format)                                                                       admin/orders#update
+                                         DELETE /admin/orders/:id(.:format)                                                                       admin/orders#destroy
+                          admin_products GET    /admin/products(.:format)                                                                         admin/products#index
+                                         POST   /admin/products(.:format)                                                                         admin/products#create
+                       new_admin_product GET    /admin/products/new(.:format)                                                                     admin/products#new
+                      edit_admin_product GET    /admin/products/:id/edit(.:format)                                                                admin/products#edit
+                           admin_product GET    /admin/products/:id(.:format)                                                                     admin/products#show
+                                         PATCH  /admin/products/:id(.:format)                                                                     admin/products#update
+                                         PUT    /admin/products/:id(.:format)                                                                     admin/products#update
+                                         DELETE /admin/products/:id(.:format)                                                                     admin/products#destroy
                              store_index GET    /store/index(.:format)                                                                            store#index
                                     root GET    /                                                                                                 store#index
         turbo_recede_historical_location GET    /recede_historical_location(.:format)                                                             turbo/native/navigation#recede
