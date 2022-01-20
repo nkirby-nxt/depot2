@@ -1,0 +1,39 @@
+<%= turbo_frame_tag dom_id(product) do %>
+  <div id="<%= dom_id product %>">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <div class="flex flex-col">
+        <div class="space-y-2">
+          <p>
+            <strong>Name:</strong>
+            <%= product.name %>
+          </p>
+
+          <p>
+            <strong>Description:</strong>
+            <%= product.description %>
+          </p>
+
+          <p>
+            <strong>Price:</strong>
+            <%= product.price %>
+          </p>
+        </div>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <% if product.hash_tags.any? %>
+          <% product.hash_tags.each do |tag| %>
+            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#<%= tag %></span>
+          <% end %>
+        <% end %>
+      </div>
+	  <div data-controller="cart">
+		  <%#= button_to "Add to Cart +",  %>
+	    <button data-action="click->cart#log">
+	      Add to Cart +
+	    </button>
+	    <span data-cart-target="output">
+	    </span>
+	  </div>
+    </div>
+  </div>
+<% end %>

@@ -5,8 +5,6 @@ class Admin::AdminController < ApplicationController
   private
 
   def require_admin_role
-    puts "CURRENT USER ROLE:"
-    puts current_user.admin?
     unless current_user.admin?
       redirect_to store_index_path, notice: "Access denied."
     end
